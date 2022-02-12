@@ -60,7 +60,7 @@ do {
     total = total + n;
     n++;
 } while (n <= 500);
-const result = total / 500; 
+const result = total / 500;
 console.log(result);
 
 console.log("7. Вывести на страницу сумму только четных чисел в диапазоне от 30 до 80");
@@ -70,7 +70,7 @@ let evenNumbersSum = 0;
 
 do {
     if (p % 2 === 0) {
-        evenNumbersSum = evenNumbersSum + p;    
+        evenNumbersSum = evenNumbersSum + p;
     }
     p++;
 } while (p <= 80);
@@ -127,17 +127,26 @@ let randomNumber = Math.floor(Math.random() * 11);
 console.log("Рандомное число: " + randomNumber);
 
 let userNumber = +prompt("Угадайте число от 0 до 10");
-
-if (randomNumber === userNumber) {
-    console.log("Поздравляю, Вы угадали!");
-} else {
-    while (randomNumber !== userNumber) {
-        userNumber = +prompt("Вы не угадали. Попробуйте ещё раз");
-        if (randomNumber === userNumber) {
-            console.log("Поздравляю, Вы угадали!");
-            break;
+console.log(typeof userNumber);
+if (userNumber) {
+    if (randomNumber === userNumber) {
+        console.log("Поздравляю, Вы угадали!");
+    } else {
+        while (randomNumber !== userNumber) {
+            userNumber = +prompt("Вы не угадали. Попробуйте ещё раз");
+            if (userNumber) {
+                if (randomNumber === userNumber) {
+                    console.log("Поздравляю, Вы угадали!");
+                    break;
+                }
+            } else {
+                console.log("Очень жаль, вы были близки");
+                break;
+            }
         }
     }
+} else {
+    console.log("Очень жаль, вы были близки");
 }
 
 console.log("12. Запросить у пользователя число, которое будет высотой вершины прямоугольного треугольника")
