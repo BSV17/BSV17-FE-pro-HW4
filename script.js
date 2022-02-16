@@ -123,29 +123,15 @@ for (let s = 1; s <= 10; s++) {
 
 console.log("11. Игра 'Угадай число' ");
 
+let userNumber;
 let randomNumber = Math.floor(Math.random() * 11);
 console.log("Рандомное число: " + randomNumber);
 
-let userNumber = +prompt("Угадайте число от 0 до 10");
-if (userNumber) {
-    if (randomNumber === userNumber) {
+while ((userNumber = prompt("Угадайте число от 0 до 10")) !== null) {
+    if (+userNumber == randomNumber) {
         console.log("Поздравляю, Вы угадали!");
-    } else {
-        while (randomNumber !== userNumber) {
-            userNumber = +prompt("Вы не угадали. Попробуйте ещё раз");
-            if (userNumber) {
-                if (randomNumber === userNumber) {
-                    console.log("Поздравляю, Вы угадали!");
-                    break;
-                }
-            } else {
-                console.log("Очень жаль, вы были близки");
-                break;
-            }
-        }
+        break;
     }
-} else {
-    console.log("Очень жаль, вы были близки");
 }
 
 console.log("12. Запросить у пользователя число, которое будет высотой вершины прямоугольного треугольника")
